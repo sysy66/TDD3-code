@@ -6,7 +6,11 @@
 ## Appendix
 - [I: Source Code Examples](https://www.obeythetestinggoat.com/book/appendix_github_links.html)
 
-## Django
-- [Documentation_en_4.2](https://docs.djangoproject.com/en/4.2/)
-- [Documentation_zh-hans_4.2](https://docs.djangoproject.com/zh-hans/4.2/)
-- [Django Girls 教程](https://tutorial.djangogirls.org/zh/)
+## Documentation
+- [Django_en_4.2](https://docs.djangoproject.com/en/4.2/)
+- [Django_zh-hans_4.2](https://docs.djangoproject.com/zh-hans/4.2/)
+- [Django Girls tutorial](https://tutorial.djangogirls.org/zh/)
+- [unittest](https://docs.python.org/3/library/unittest.html)
+
+## Expansion
+- [Python Testing with pytest, 2nd Edition ](https://pythontest.com/pytest-book/)

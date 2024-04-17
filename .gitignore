@@ -1,11 +1,11 @@
 # Environments
-.venv
+.venv/
 
 # Django stuff:
 db.sqlite3
 
 # IDEs
-.idea
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
