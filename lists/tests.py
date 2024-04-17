@@ -1,6 +1,5 @@
 from django.test import TestCase
-from django.http import HttpRequest
-from lists.views import home_page
+
 
 class HomePageTest(TestCase):
     def test_home_page_return_correct_html(self):
@@ -8,4 +7,3 @@ class HomePageTest(TestCase):
         self.assertContains(response, "<title>To-Do lists</title>")
         self.assertContains(response, "<html>")
         self.assertContains(response, "</html>")
-        
