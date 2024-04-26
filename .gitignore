@@ -1,5 +1,6 @@
 # Environments
 .venv/
+.Dockerfile.swp
 
 # Django stuff:
 db.sqlite3
@@ -11,4 +12,3 @@ db.sqlite3
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.pyc
-.Dockerfile.swp
