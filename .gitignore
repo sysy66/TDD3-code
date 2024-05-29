@@ -5,6 +5,7 @@
 # Django stuff:
 db.sqlite3
 /static
+src/static
 
 # IDEs
 .idea/
