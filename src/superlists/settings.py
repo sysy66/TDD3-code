@@ -109,7 +109,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Passwordless validation
 AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = [
+    'accounts.authentication.PasswordlessAuthenticationBackend',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -144,3 +148,10 @@ LOGGING = {
         "root": {"handlers": ["console"], "level": "INFO"},
     },
 }
+
+# Email setting
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
