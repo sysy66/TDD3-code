@@ -1,9 +1,8 @@
-import os
-
 from unittest.mock import patch, call
 from django.test import TestCase
 
 from accounts.models import Token
+from superlists.settings import EMAIL_HOST_USER
 
 
 class SendLoginEmailViewTest(TestCase):
@@ -32,7 +31,7 @@ class SendLoginEmailViewTest(TestCase):
         self.assertEqual(mock_send_async_login_email.called, True)
         (subject, message, from_email, email), kwargs = mock_send_async_login_email.call_args
         self.assertEqual(subject, "Your login link for Superlists")
-        self.assertEqual(from_email, os.environ.get('EMAIL_HOST_USER'))
+        self.assertEqual(from_email, EMAIL_HOST_USER)
         self.assertEqual([email], ["edith@example.com"])
     
     @patch('accounts.views.messages')

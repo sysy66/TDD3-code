@@ -1,6 +1,7 @@
 # Environments
 .venv/
 .Dockerfile.swp
+.env
 
 # Django stuff:
 db.sqlite3

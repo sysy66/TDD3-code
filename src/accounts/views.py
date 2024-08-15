@@ -1,4 +1,3 @@
-import os
 from threading import Thread
 
 from django.contrib import auth, messages
@@ -7,6 +6,7 @@ from django.shortcuts import redirect
 from django.urls import reverse
 
 from accounts.models import Token
+from superlists.settings import EMAIL_HOST_USER
 
 
 def send_async_login_email(subject, message, from_email, email):
@@ -30,7 +30,7 @@ def send_login_email(request):
                  args=[
                      'Your login link for Superlists',
                      message_body,
-                     os.environ.get('EMAIL_HOST_USER'),
+                     EMAIL_HOST_USER,
                      email
                  ]
                  )
