@@ -26,6 +26,9 @@ class MyListsTest(FunctionalTest):
         )
         
     def test_logged_in_users_lists_are_saved_as_my_lists(self):
+        if self.test_server:
+            # TODO: 21.5. Managing the Test Database on Staging
+            return
         email = "edith@example.com"
         self.browser.get(self.live_server_url)
         self.wait_to_be_logged_out(email)
