@@ -13,8 +13,13 @@ class List(models.Model):
     
     @staticmethod
     def create_new(first_item_text, owner=None):
+        # new_list = List.objects.create()
+        # if owner is not None:
+        #     new_list.owner = owner
+        #     new_list.save()
         new_list = List.objects.create(owner=owner)
         Item.objects.create(text=first_item_text, list=new_list)
+        return new_list
 
 
 class Item(models.Model):

@@ -30,9 +30,10 @@ class NewListForm(ItemForm):
     
     def save(self, owner):
         if owner.is_authenticated:
-            List.create_new(first_item_text=self.cleaned_data['text'], owner=owner)
+            new_list = List.create_new(first_item_text=self.cleaned_data['text'], owner=owner)
         else:
-            List.create_new(first_item_text=self.cleaned_data['text'])
+            new_list = List.create_new(first_item_text=self.cleaned_data['text'])
+        return new_list
     
     
 class ExistingListItemForm(ItemForm):

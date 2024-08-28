@@ -53,7 +53,7 @@ class ExistingListItemFormTest(TestCase):
         form = ExistingListItemForm(for_list=list_, data={"text": "no twins!"})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors["text"], [DUPLICATE_ITEM_ERROR])
-
+    
     def test_form_save(self):
         list_ = List.objects.create()
         form = ExistingListItemForm(for_list=list_, data={'text': 'hi'})
@@ -86,4 +86,13 @@ class NewListFormTest(unittest.TestCase):
         mock_List_create_new.assert_called_once_with(
             first_item_text='new item text', owner=user
         )
-        
+    
+    @patch('lists.forms.List.create_new')
+    def test_save_returns_new_list_object(
+            self, mock_List_create_new
+    ):
+        user = Mock(is_authenticated=True)
+        form = NewListForm(data={'text': 'new item text'})
+        form.is_valid()
+        response = form.save(owner=user)
+        self.assertEqual(response, mock_List_create_new.return_value)
