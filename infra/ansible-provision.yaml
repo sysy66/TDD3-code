@@ -65,8 +65,16 @@
         mounts:
           - type: bind
             source: /home/caolv/sites/superlists-staging.top/db.sqlite3
-            target: /src/db.sqlite3
+            target: /db.sqlite3
+          - type: bind
+            source: /home/caolv/sites/superlists-staging.top/static
+            target: /static
         ports: 81:8888
+
+    - name: Run collectstatic inside container
+      community.docker.docker_container_exec:
+        container: superlists
+        command: ./manage.py collectstatic
 
     - name: Run migration inside container
       community.docker.docker_container_exec:
